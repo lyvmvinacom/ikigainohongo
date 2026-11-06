@@ -394,3 +394,10 @@
  .arena-modes button{font-size:10px;padding:6px 2px}
  .arena-ring{left:4%;width:35%;height:28%;top:40%}
 }
+
+/* v7: speech bubbles above room characters */
+.room-actor{position:absolute}
+.room-actor .speech{position:absolute;left:50%;bottom:calc(100% + 8px);transform:translate(-50%,8px) scale(.92);transform-origin:bottom center;max-width:min(240px,60vw);min-width:44px;padding:8px 12px;border:2px solid #8c5636;border-radius:14px;background:linear-gradient(180deg,#fffdf0,#ffe6b5);color:#553522;font-size:clamp(11px,1.15vw,14px);font-weight:900;line-height:1.3;text-align:center;white-space:normal;overflow-wrap:anywhere;box-shadow:0 4px 0 #71452f,0 7px 14px #2b211d55;opacity:0;visibility:hidden;pointer-events:none;z-index:30;transition:opacity .16s,transform .16s}
+.room-actor .speech:after{content:"";position:absolute;left:50%;bottom:-9px;width:13px;height:13px;background:#ffe6b5;border-right:2px solid #8c5636;border-bottom:2px solid #8c5636;transform:translateX(-50%) rotate(45deg)}
+.room-actor .speech.show{opacity:1;visibility:visible;transform:translate(-50%,0) scale(1);animation:bubble-pop .18s ease-out}
+@keyframes bubble-pop{0%{transform:translate(-50%,8px) scale(.8)}100%{transform:translate(-50%,0) scale(1)}}

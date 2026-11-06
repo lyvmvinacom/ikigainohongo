@@ -44,3 +44,11 @@ Lớp học, Đấu trường, N5, N4, JFT, Gym và Phòng Anh Tùng có bố c�
 - Ghép trận dựa trên Supabase Realtime Presence của cùng kênh thế giới. Đây là hàng chờ/điều kiện đủ người phía client, chưa phải hệ thống thi đấu có máy chủ phân xử chống gian lận.
 - Giữ nguyên cơ chế đăng nhập, hồ sơ XP/xu và ngân hàng N5. Không chạy lại SQL chỉ để dùng giao diện phòng/chat/hàng chờ.
 - Nếu repo có `assets/jft/` hoặc tài nguyên bổ sung khác không có trong gói này, giữ lại khi cập nhật.
+
+## IKIGAI WORLD 7.0 — bản đồ không hiển thị nhân vật + bong bóng chat
+- Bản đồ thế giới chỉ còn cảnh quan và các điểm vào phòng; không render sprite người chơi trên bản đồ. Nhân vật của tài khoản hiện ra sau khi vào phòng.
+- Khi gửi tin nhắn trong phòng, bong bóng thoại xuất hiện phía trên nhân vật gửi; người khác trong cùng phòng nhận được bong bóng realtime. Bong bóng tự ẩn sau 5 giây; khung chat vẫn lưu nội dung trong phiên hiện tại.
+- Tạo tài khoản học viên đã được tích hợp bằng Supabase Auth (`Đăng ký`). Mỗi học viên dùng email + mật khẩu riêng; đăng nhập cùng tài khoản đó trên máy khác sẽ vào cùng thế giới và thấy người chơi online qua Realtime Presence.
+- Để cho phép đăng ký: trong Supabase Dashboard > Authentication > Providers > Email, bật Email provider; trong Authentication > Settings kiểm tra cho phép đăng ký mới. Nếu bật xác nhận email, học viên phải mở email xác nhận trước khi đăng nhập. Không dùng chế độ Khách nếu muốn tài khoản/hồ sơ đồng bộ lâu dài.
+- Hồ sơ XP/xu cần chạy `supabase-schema.sql` trong SQL Editor một lần. Realtime cần bật/được phép dùng cho project và trình duyệt phải có Internet.
+- Không cần chạy lại SQL nếu schema 3.2 đã được áp dụng ở phiên bản trước; thay đổi v7 chủ yếu là hiển thị bản đồ và bong bóng chat.
