@@ -1,22 +1,12 @@
-# IKIGAI WORLD 2.0 – Polished Map UI
+# IKIGAI WORLD 2.0 – Giai đoạn 2
 
-Dự án game mới, tách biệt hoàn toàn với repository IKIGAI WORLD hiện tại.
+Bản đồ gốc và các vùng bấm được giữ nguyên. Giai đoạn 2 bổ sung nội thất tương tác theo phong cách anime Nhật đồng bộ bản đồ.
 
-## Bản đồ hoàn thiện giao diện
-- Bản đồ minh họa anime Nhật Bản chất lượng cao làm nền.
-- Tối ưu khung nhìn ngang trên điện thoại; khi cầm dọc sẽ hiện nhắc xoay ngang.
-- Các vùng chạm trên từng tòa nhà mở bảng giới thiệu địa điểm.
-- Bảy địa điểm: Lớp học IKIGAI, Đấu trường, N5, N4, JFT, Phòng Gym – Anh Thường, Phòng Anh Tùng.
-- Không kết nối hay chỉnh sửa dữ liệu của game cũ.
+- Lớp học: luyện mẫu từ vựng, ngữ pháp, Kanji.
+- Phòng N5/N4/JFT: các khu từ vựng, ngữ pháp, Kanji, đọc hiểu, nghe hiểu và thi thử mẫu.
+- Đấu trường: đấu tập kiến thức 1v1 trên máy; khu 2v2 giới thiệu, chưa ghép trận trực tuyến.
+- Phòng Gym: thử thách vận động nhẹ, tự chọn và nhận XP/xu.
+- Phòng Anh Tùng: bàn trà, ấm trà và lời chào “Uống trà với anh nhé”.
+- NPC tương tác, XP/cấp độ/xu lưu trên trình duyệt.
 
-## Chạy thử
-Mở `index.html` trên trình duyệt. Khuyến nghị chạy bằng GitHub Pages hoặc Live Server.
-
-## Đưa lên GitHub Pages
-1. Tạo repository mới `ikigai-world`.
-2. Upload toàn bộ file và thư mục trong ZIP lên thư mục gốc repository.
-3. Settings → Pages → Deploy from a branch → `main` → `/(root)` → Save.
-4. Chờ workflow hoàn tất rồi mở website.
-
-## Phạm vi
-Đây là bản hoàn thiện giao diện bản đồ và tương tác chọn địa điểm. Các phòng học, nhiệm vụ, chiến đấu, tài khoản và multiplayer sẽ làm sau theo yêu cầu.
+Câu hỏi hiện là dữ liệu mẫu để kiểm tra luồng tương tác, chưa thay thế ngân hàng đề chuẩn. Multiplayer thật và đồng bộ tài khoản sẽ phát triển tiếp.
