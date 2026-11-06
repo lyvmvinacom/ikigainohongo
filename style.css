@@ -126,3 +126,112 @@
 .room-actor img{height:clamp(72px,10vw,112px)}
 .room-actor.walking img{animation:walk-cycle .24s steps(2,end) infinite}
 @media(max-width:700px){.world-map{object-fit:fill}.map-hud{background:linear-gradient(90deg,#173b44ee,#244b50e8)}.interior-class .station-grid{width:94%;bottom:2%}.interior-class .class-desk{height:12%;bottom:20%}.interior-n5 .station-grid,.interior-n4 .station-grid,.interior-jft .station-grid{grid-template-columns:repeat(2,1fr);bottom:2%}.interior-arena .station-grid{grid-template-columns:1fr}.interior-tea .tea-host{left:78%;top:50%}}
+
+
+/* IKIGAI WORLD 5.0 — Gunny-inspired game presentation */
+.map-scene{background:#123e55}
+.world-layers{position:absolute;inset:0;overflow:hidden}
+.world-map{
+ width:100%;height:100%;left:0;top:0;transform:none;
+ object-fit:cover;object-position:center center;
+ border:0;border-radius:0;box-shadow:none;
+}
+.map-hud{
+ z-index:12;top:7px;left:8px;right:8px;align-items:center;
+ min-height:67px;padding:6px 9px;border:2px solid #f5d58c;border-radius:18px;
+ background:linear-gradient(180deg,rgba(20,48,85,.97),rgba(34,37,77,.94));
+ box-shadow:0 5px 0 #182943,0 9px 22px #071b2d80;
+}
+.identity,.resources{
+ border:1px solid #ffe5a2;border-radius:13px;
+ background:linear-gradient(145deg,#4b377e,#263d69);
+ box-shadow:inset 0 1px #ffffff50,0 3px 0 #17233f;
+}
+.identity{min-width:205px}
+.identity>span:first-child{display:grid;place-items:center;width:43px;height:43px;border-radius:50%;background:linear-gradient(#ffe7a8,#c98142);border:2px solid #fff1c8}
+.identity b{font-size:15px;color:#fff}
+.identity small{font-size:10px;letter-spacing:.6px}
+.resources{margin-left:auto;gap:18px;font-size:14px}
+.resources span{white-space:nowrap}
+.resources b{color:#ffe27c;text-shadow:0 1px #573c18}
+.resources #progressSource{display:block;color:#b8f0c5;font-size:9px;text-align:right}
+.map-tools{z-index:13;top:83px;right:12px}
+.map-tools button,.move-pad button{
+ border:2px solid #ffe4a1;border-radius:13px;
+ background:linear-gradient(#416b83,#183b59);color:#fff;
+ box-shadow:0 4px 0 #10283c, inset 0 1px #ffffff45;
+}
+.map-side-menu{
+ position:absolute;z-index:13;left:10px;top:110px;bottom:112px;
+ display:flex;flex-direction:column;justify-content:center;gap:9px;
+ pointer-events:auto;
+}
+.map-side-menu button{
+ width:72px;min-height:65px;padding:5px 3px;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+ color:#fff7dc;font-size:24px;font-weight:1000;
+ border:2px solid #ffe5a2;border-radius:16px;
+ background:linear-gradient(145deg,#44558aef,#202f5ceF);
+ box-shadow:0 4px 0 #172442,inset 0 1px #ffffff55;
+ text-shadow:0 2px #39224e;
+}
+.map-side-menu button span{font-size:10px;white-space:nowrap}
+.map-side-menu button:active,.map-quickbar button:active{transform:translateY(3px);box-shadow:0 1px 0 #172442}
+.map-quickbar{
+ position:absolute;z-index:13;right:12px;bottom:12px;
+ display:flex;gap:5px;padding:7px 9px;
+ border:2px solid #ffe4a1;border-radius:19px;
+ background:linear-gradient(180deg,#253d62ed,#172b4bed);
+ box-shadow:0 5px 0 #102238,inset 0 1px #ffffff50;
+}
+.map-quickbar button{
+ min-width:58px;padding:3px 5px;border:1px solid #f5d89b;border-radius:12px;
+ display:flex;flex-direction:column;align-items:center;gap:1px;
+ background:linear-gradient(#54789a,#27445f);color:#fff;
+ font-size:22px;font-weight:900;text-shadow:0 2px #253044;
+}
+.map-quickbar span{font-size:9px;white-space:nowrap}
+.map-hint{
+ z-index:12;bottom:14px;left:50%;max-width:calc(100% - 190px);
+ padding:7px 13px;border:1px solid #ffe3a2;border-radius:18px;
+ background:#1b3459e8;color:#fff6d8;font-size:11px;
+ box-shadow:0 3px 0 #12263e;
+}
+.move-pad{z-index:14;left:14px;bottom:16px;opacity:1}
+.move-pad button{width:37px;height:34px}
+.actors{z-index:8}
+.actor{width:clamp(48px,4.7vw,68px);height:clamp(72px,7vw,96px);filter:drop-shadow(0 5px 3px #18243c88)}
+.actor img{height:78%;object-fit:contain;animation:avatar-idle 2.4s ease-in-out infinite}
+.actor.walking img{animation:avatar-walk .22s ease-in-out infinite alternate}
+.actor .name{background:linear-gradient(#fff5c9,#f0c77c);color:#54341f;border:1px solid #fff2c7;box-shadow:0 2px 4px #38251666}
+.actor.me{z-index:10}
+.actor.me:before{content:"";position:absolute;bottom:12px;left:50%;width:60%;height:13px;transform:translateX(-50%);border-radius:50%;background:#ffe76b99;box-shadow:0 0 15px 8px #ffe76b66;z-index:-1}
+.actor.teacher .name{background:linear-gradient(#f9e8ff,#d8b8fa);color:#40235f}
+.hotspot{z-index:6}
+.hotspot:hover{border-color:#fff5a8;background:#fff2;box-shadow:0 0 25px #ffe47b99,inset 0 0 16px #fff5}
+.map-petals{z-index:9}
+.map-fireflies{z-index:9}
+.map-atmosphere{z-index:3}
+.map-water-glow{z-index:3}
+@keyframes avatar-idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes avatar-walk{from{transform:translateY(0) scaleX(.98)}to{transform:translateY(-4px) scaleX(1.02)}}
+@media(max-width:760px){
+ .map-hud{min-height:54px;padding:4px 5px;top:4px;left:4px;right:4px}
+ .identity{min-width:0;padding:5px 7px;gap:5px}
+ .identity>span:first-child{width:34px;height:34px;font-size:20px}
+ .identity b{font-size:11px}.identity small{font-size:8px}
+ .resources{gap:7px;padding:6px 7px;font-size:10px}
+ .resources #progressSource{display:none}
+ .map-side-menu{left:4px;top:100px;bottom:105px;gap:5px}
+ .map-side-menu button{width:48px;min-height:48px;font-size:18px;border-radius:12px}
+ .map-side-menu button span{font-size:8px}
+ .map-tools{top:66px;right:5px;gap:4px}
+ .map-tools button{padding:6px 7px;font-size:10px}
+ .map-quickbar{right:5px;bottom:5px;gap:2px;padding:4px}
+ .map-quickbar button{min-width:38px;font-size:17px;padding:3px}
+ .map-quickbar span{font-size:7px}
+ .move-pad{left:5px;bottom:6px}
+ .move-pad button{width:30px;height:28px}
+ .map-hint{bottom:61px;max-width:calc(100% - 90px);font-size:8px;white-space:normal;text-align:center}
+ .chatbox,.memberbox{right:5px;top:110px;width:min(290px,78vw)}
+}

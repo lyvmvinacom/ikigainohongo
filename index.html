@@ -1,8 +1,8 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#17313b"><title>IKIGAI WORLD 4.0 – Japanese Learning Adventure</title><link rel="stylesheet" href="style.css?v=4.0"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script></head><body>
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#17313b"><title>IKIGAI WORLD 4.0 – Japanese Learning Adventure</title><link rel="stylesheet" href="style.css?v=5.0"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script></head><body>
 <main id="game">
 <section id="mapScene" class="map-scene">
  <div class="world-layers" aria-hidden="true">
-  <img class="world-map" src="assets/ikigai-world-map.svg" alt="Bản đồ IKIGAI WORLD">
+  <img class="world-map" src="assets/ikigai-world-map-gym-v2.png" alt="Bản đồ IKIGAI WORLD">
   <div class="map-atmosphere"></div><div class="map-water-glow"></div>
   <div class="map-petals"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="map-fireflies"><i></i><i></i><i></i><i></i><i></i></div>
@@ -18,11 +18,27 @@
   <button class="hotspot" data-place="tea" style="left:65%;top:61%;width:19%;height:20%" aria-label="Phòng Anh Tùng"></button>
  </div>
  <div class="map-hud"><div class="identity"><span id="hudAvatar">🌸</span><span><b id="hudName">Học viên</b><small id="hudRole">IKIGAI WORLD</small></span></div><div class="resources"><span>⭐ <b id="xp">0</b> XP</span><span>🪙 <b id="coins">0</b></span><span>🏅 Lv.<b id="level">1</b></span><span class="online">🟢 <b id="onlineCount">1</b> online</span><small id="progressSource">Chưa đồng bộ</small></div></div>
+ <nav class="map-side-menu" aria-label="Chức năng thế giới">
+  <button data-menu="Nhiệm vụ">📜<span>Nhiệm vụ</span></button>
+  <button data-menu="Sự kiện">🎎<span>Sự kiện</span></button>
+  <button data-menu="Bảng xếp hạng">🏆<span>BXH</span></button>
+  <button data-menu="Thành tích">🌟<span>Thành tích</span></button>
+  <button data-menu="Thông báo">📣<span>Thông báo</span></button>
+ </nav>
  <div class="map-tools"><button id="chatToggle">💬 Trò chuyện</button><button id="memberToggle">👥 Người chơi</button><button id="logoutBtn">↪ Thoát</button></div>
  <div class="chatbox" id="chatbox"><header>💬 Trò chuyện IKIGAI <button id="closeChat">×</button></header><div id="messages" class="messages"><p class="system-msg">🌸 Chào mừng đến IKIGAI WORLD!</p></div><form id="chatForm"><input id="chatInput" maxlength="240" placeholder="Nhắn tin với mọi người..."><button>➤</button></form></div>
  <div class="memberbox" id="memberbox"><header>👥 Người đang ở thế giới <button id="closeMembers">×</button></header><div id="members"></div></div>
  <div class="move-pad" id="movePad"><button data-dir="up">▲</button><div><button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button></div></div>
- <div class="map-hint">Dùng phím WASD / phím mũi tên hoặc nút điều khiển để di chuyển · Chạm tòa nhà để vào phòng</div>
+ <div class="map-quickbar">
+  <button data-quick="Túi đồ">🎒<span>Túi đồ</span></button>
+  <button data-quick="Nhân vật">🧍<span>Nhân vật</span></button>
+  <button data-quick="Thú cưng">🐕<span>Thú cưng</span></button>
+  <button data-quick="Bạn bè">👥<span>Bạn bè</span></button>
+  <button data-quick="Guild">🌸<span>Guild</span></button>
+  <button data-quick="Học tập">📚<span>Học tập</span></button>
+  <button data-quick="Bài thi">📝<span>Bài thi</span></button>
+ </div>
+ <div class="map-hint">WASD / phím mũi tên để di chuyển · Chạm công trình để vào phòng · Chỉ người chơi đã đăng nhập mới xuất hiện</div>
 </section>
 <section id="roomScene" class="room-scene" hidden></section>
 <div id="placeModal" class="modal" hidden><div class="modal-card"><button class="modal-x" id="closePlace">×</button><small>KHÁM PHÁ IKIGAI WORLD</small><h2 id="placeTitle"></h2><p id="placeDescription"></p><button class="gold" id="enterPlace">Bước vào khu vực</button></div></div>
@@ -31,4 +47,4 @@
  <div class="login-tabs"><button class="selected" data-tab="student">🎒 Học viên</button><button data-tab="teacher">👑 Giáo viên</button></div>
  <div id="studentForm"><label>Tên hiển thị trong game</label><input id="studentName" maxlength="24" placeholder="Ví dụ: Minh Anh"><label>Email tài khoản</label><input id="studentEmail" type="email" autocomplete="username" placeholder="email của bạn"><label>Mật khẩu</label><input id="studentPassword" type="password" autocomplete="current-password" placeholder="Tối thiểu 6 ký tự"><div class="gender-pick"><button class="selected" data-gender="male">Nam ♂</button><button data-gender="female">Nữ ♀</button></div><div class="avatar-pick"><button id="avatarPrev">‹</button><img id="avatarPreview" src="assets/characters/male_school.png"><button id="avatarNext">›</button></div><div class="login-actions"><button class="gold" id="studentSignIn">ĐĂNG NHẬP</button><button class="secondary" id="studentSignUp">TẠO TÀI KHOẢN</button></div><button class="guest" id="guestEnter">Vào thử không cần tài khoản</button></div>
  <div id="teacherForm" hidden><label>Email giáo viên</label><input id="teacherEmail" type="email" autocomplete="username"><label>Mật khẩu</label><input id="teacherPassword" type="password" autocomplete="current-password"><button class="gold full" id="teacherSignIn">ĐĂNG NHẬP GIÁO VIÊN</button><p class="small-note">Tài khoản giáo viên cần được cấp role teacher trong Supabase.</p></div><p id="loginStatus" role="status"></p></div></div>
-</main><script src="app.js?v=4.0"></script></body></html>
+</main><script src="app.js?v=5.0"></script></body></html>
