@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#192d3b"><title>IKIGAI WORLD 2.0</title><link rel="stylesheet" href="style.css"></head>
+<body><main id="game">
+<div id="stage">
+  <img id="map" src="assets/ikigai-world-map.png" alt="Bản đồ thế giới IKIGAI">
+  <div class="hotspot" data-place="class" style="left:28%;top:28%;width:18%;height:25%" aria-label="Lớp học IKIGAI"></div>
+  <div class="hotspot" data-place="arena" style="left:42%;top:8%;width:19%;height:25%" aria-label="Đấu trường IKIGAI"></div>
+  <div class="hotspot" data-place="n4" style="left:68%;top:15%;width:20%;height:25%" aria-label="Phòng luyện thi N4"></div>
+  <div class="hotspot" data-place="n5" style="left:10%;top:36%;width:21%;height:25%" aria-label="Phòng luyện thi N5"></div>
+  <div class="hotspot" data-place="jft" style="left:72%;top:37%;width:20%;height:23%" aria-label="Phòng luyện thi JFT"></div>
+  <div class="hotspot" data-place="gym" style="left:19%;top:62%;width:20%;height:24%" aria-label="Phòng Gym Anh Thường"></div>
+  <div class="hotspot" data-place="tea" style="left:65%;top:61%;width:21%;height:25%" aria-label="Phòng Anh Tùng"></div>
+  <div class="toast" id="toast"></div>
+</div>
+<div class="portrait-tip" id="portraitTip"><div class="tip-card"><div class="rotate">↻</div><b>IKIGAI WORLD</b><p>Hãy xoay ngang điện thoại để khám phá bản đồ trọn vẹn nhé!</p></div></div>
+<section class="place-panel" id="placePanel" hidden><button id="closePanel" class="x">×</button><small>KHÁM PHÁ IKIGAI WORLD</small><h2 id="placeName"></h2><p id="placeDesc"></p><button id="visitBtn">Khám phá khu vực</button></section>
+<div class="footer-note">Chạm vào các tòa nhà trên bản đồ để khám phá</div>
+</main><script src="app.js"></script></body></html>
