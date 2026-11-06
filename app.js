@@ -1,6 +1,6 @@
 (()=>{'use strict';
 const SUPABASE_URL='https://vfimwlijbxamudirejiq.supabase.co';
-const SUPABASE_ANON_KEY='sb_publishable_IETjbMWeJthqXScH9fkrXg_x2QZiL8D';
+const SUPABASE_ANON_KEY='sb_publishable_IETjbMWeJthqXscH9fkrXg_x2QZiL8D';
 const ROOM='ikigai-world-main';
 const $=id=>document.getElementById(id),safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let client=null,channel=null,user=null,nickname='',role='student',gender='male',avatar=0,joined=false,bank=[],currentPlace='',qset=[],qpos=0,score=0,activeGroup='',myPos={x:50,y:72},roomPos={x:50,y:70},people={},moving=false,lastSend=0,moveLoop=null,keys={},xp=0,coins=100;
