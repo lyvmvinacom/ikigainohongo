@@ -1,34 +1,29 @@
-# IKIGAI WORLD 3.0 – Multiplayer & Student Accounts
+# IKIGAI WORLD 4.0 — Reconstructed Living World
 
-## What's included
-- World map and the Phase 2 room interiors retained.
-- Supabase Auth student accounts: email + password sign-up and sign-in.
-- Teacher email/password sign-in with existing `app_metadata.role = teacher` check.
-- Guest/anonymous entry remains available for testing.
-- Real-time online presence, player avatars, movement broadcasts, room scene announcements and shared chat using Supabase Realtime.
-- Keyboard WASD/arrow controls and on-screen directional buttons for touch devices.
-- Character sprites include student avatars and リー先生. リー先生 appears in the classroom and welcomes learners.
-- Existing IKIGAI N5 bank (1,500 questions) remains connected.
-- XP and coins currently persist locally in the browser; authoritative server-side progress is a later security step.
+Bản 4.0 tái dựng bản đồ IKIGAI thành SVG vector riêng, không còn sử dụng ảnh chụp giao diện làm nền bản đồ. Các tòa nhà, đường đi, hồ cá koi, cổng Torii, cầu, cây sakura, đèn lồng và cảnh quan được vẽ thành các thành phần đồ họa có thể mở rộng theo kích thước màn hình. Các điểm vào phòng là hotspot HTML riêng, nhân vật người chơi được vẽ động trên lớp riêng và dữ liệu tài khoản tiếp tục lấy từ Supabase.
 
-## Deploy to existing GitHub Pages repo
-1. Back up the current repository first (download ZIP).
-2. Unzip this package. Open folder `ikigainohongo-main`.
-3. Upload/overwrite `index.html`, `app.js`, `style.css`, `README.md`, and `supabase-schema.sql` in the repository root.
-4. Upload the whole `assets` folder contents, including `ikigai-n5-bank.json`, `ikigai-world-map.png`, and `characters/`. Do not delete other assets you still use.
-5. Commit to `main`. Wait for GitHub Actions Pages deployment to show a green check, then open the site and press Ctrl+F5.
+## Cấu trúc
+- `index.html`: giao diện và hotspot bản đồ.
+- `app.js`: đăng nhập, hồ sơ, realtime presence/chat, di chuyển, vào phòng và luyện tập.
+- `style.css`: hiệu ứng bản đồ, nhân vật và nội thất riêng theo từng phòng.
+- `assets/ikigai-world-map.svg`: bản đồ vector mới, không chứa sẵn HUD hay nhân vật giả.
+- `assets/ikigai-n5-bank.json`: ngân hàng câu hỏi N5 hiện có.
+- `assets/characters/`: bộ nhân vật hiện có, giữ nguyên ảnh thầy Ly đã được cung cấp.
+- `supabase-schema.sql`: hồ sơ người chơi và RPC thưởng XP/xu.
 
-## Supabase setup
-- Uses the existing project URL and public publishable/anon key already used by IKIGAI WORLD 1.
-- Student registration uses Supabase Auth email/password. If email confirmation is enabled, learners must confirm email before first sign-in.
-- Anonymous guest mode requires Supabase Auth > Providers > Anonymous Sign-ins to be enabled.
-- Teacher login expects the account's `app_metadata.role` to equal `teacher`, consistent with the existing IKIGAI WORLD 1 account setup.
-- Supabase Realtime must be enabled and available for channels. This build uses broadcast + presence and does not require a new database table for live movement/chat.
-- Never put a Supabase service-role key in frontend files.
+## Triển khai GitHub Pages
+1. Sao lưu phiên bản đang chạy.
+2. Giải nén ZIP và mở thư mục `ikigainohongo-main`.
+3. Thay `index.html`, `app.js`, `style.css` và tải thêm `assets/ikigai-world-map.svg`.
+4. Giữ nguyên `assets/characters`, `assets/ikigai-n5-bank.json`, `assets/jft` (nếu đã có trên repo) và các dữ liệu Supabase.
+5. Không đưa secret/service_role key lên GitHub. Chỉ dùng publishable/anon key ở trình duyệt.
+6. Mở GitHub Actions, đợi workflow Pages màu xanh rồi tải lại trang bằng Ctrl+F5.
 
-## Important scope / next hardening
-- Multiplayer realtime is implemented as one shared world channel; positions, chat, and room presence are synchronized among online players. This is a prototype-level room/world presence system, not a dedicated authoritative game server.
-- Student XP/coins and progress are stored locally at this stage. For tamper-resistant leaderboards and cross-device continuity, next step is to add a secured profile/progress table with RLS policies and server-side RPC.
-- 1v1 is currently a local question duel practice; true matchmaking and synchronized 1v1/2v2 rounds are a separate next milestone.
-- N4 and JFT rooms are styled but locked until their dedicated question banks are supplied/connected.
-- Some questions in the N5 bank were previously marked as teacher-review items; review before official exams.
+## Khu vực
+Lớp học, Đấu trường, N5, N4, JFT, Gym và Phòng Anh Tùng có bố cục nội thất và skin riêng. Nội dung luyện thi chỉ hoạt động khi ngân hàng dữ liệu tương ứng đã có; N4 không tự tạo câu hỏi giả.
+
+## Kết nối và tài khoản
+Đăng nhập học viên/giáo viên, hồ sơ XP/xu, realtime presence/chat và thưởng kết quả sử dụng Supabase project đã cấu hình trong `app.js`. Nếu thay project Supabase, cập nhật URL và publishable key trong mã nguồn; không sử dụng secret key.
+
+## Kiểm thử
+Đã kiểm tra cú pháp JavaScript và tính toàn vẹn ZIP trong quá trình đóng gói. Kết nối realtime thật cần được xác nhận sau khi triển khai trên GitHub Pages bằng tài khoản thực của trung tâm.
