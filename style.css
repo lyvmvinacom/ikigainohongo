@@ -235,3 +235,162 @@
  .map-hint{bottom:61px;max-width:calc(100% - 90px);font-size:8px;white-space:normal;text-align:center}
  .chatbox,.memberbox{right:5px;top:110px;width:min(290px,78vw)}
 }
+
+
+/* IKIGAI WORLD 6.0 — richly dressed interactive interiors */
+.room-scene{background:radial-gradient(ellipse at 50% 20%,#fff5d5 0,#d7eee0 60%,#a8d2c0 100%)}
+.room-top{height:54px;background:linear-gradient(180deg,#244e59,#153b47);border-bottom:3px solid #e6bd76;box-shadow:0 4px 12px #183b3c55}
+.room-top-actions{display:flex;gap:8px;align-items:center}
+.room-top-actions button{border:2px solid #ffe0a0;border-radius:13px;padding:8px 14px;background:linear-gradient(#ffcf7c,#e58a43);color:#59351f;font-weight:1000;box-shadow:0 3px 0 #8d4d2c}
+.room-top-actions #roomChatToggle{background:linear-gradient(#5b9fa3,#27606b);color:#fff}
+.interior{
+ overflow:hidden;isolation:isolate;
+ background:
+  radial-gradient(ellipse at 50% 12%,#fff8dd 0,#f0dfb8 52%,transparent 53%),
+  linear-gradient(180deg,#c4e5df 0 47%,#e3b47b 47% 100%);
+}
+.interior:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.35;
+ background-image:radial-gradient(#fff 1px,transparent 1.5px),radial-gradient(#a36a3d 1px,transparent 1.5px);
+ background-size:38px 38px,54px 54px;background-position:0 0,17px 20px}
+.interior .wall{height:48%;background:linear-gradient(180deg,#d8f0e8,#f9edce 85%);border-bottom:10px solid #875638;box-shadow:0 7px 0 #c48c55}
+.interior .floor{top:48%;background:
+ repeating-linear-gradient(0deg,transparent 0 36px,#9b633b35 37px 40px),
+ repeating-linear-gradient(90deg,transparent 0 76px,#9b633b22 77px 80px),
+ linear-gradient(180deg,#eac18d,#d9a66e)}
+.interior .window{top:9%;width:18%;height:24%;border:9px solid #805334;background:
+ linear-gradient(160deg,transparent 48%,#fff8 49% 51%,transparent 52%),
+ linear-gradient(180deg,#7fc9dc,#d8f4e6 65%,#80b67e);
+ box-shadow:inset 0 0 0 4px #f7dfaa,0 6px 0 #5d3929}
+.interior .window:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 48%,#805334 49% 52%,transparent 53%),linear-gradient(transparent 48%,#805334 49% 52%,transparent 53%)}
+.interior .window.left{left:5%}.interior .window.right{right:5%}
+.interior .banner{top:7%;left:50%;transform:translateX(-50%);padding:12px 30px;border:5px solid #865537;border-radius:12px;background:linear-gradient(#fff0c8,#dba66d);color:#56321f;font-size:clamp(18px,2vw,28px);box-shadow:0 7px 0 #613e2b,0 12px 24px #432d1f45;z-index:3}
+.room-actors{z-index:8}
+.room-actor{filter:drop-shadow(0 7px 4px #3b271e88)}
+.room-actor img{animation:room-idle 2.5s ease-in-out infinite}
+.room-actor.walking img{animation:avatar-walk .22s ease-in-out infinite alternate}
+@keyframes room-idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.room-actor span{border:1px solid #fff1c6;background:linear-gradient(#fff5d8,#e8bd78);color:#4d2d1d;box-shadow:0 2px 5px #482d1d66}
+.room-chat-hint{position:absolute;z-index:12;right:18px;top:68px}
+.chatbox,.memberbox{z-index:80;right:18px;top:78px;width:min(370px,40vw);height:min(440px,65vh);border:3px solid #e9c27c;box-shadow:0 8px 0 #573622,0 16px 35px #1d293c66}
+.chatbox header,.memberbox header{background:linear-gradient(#386c72,#20444f);padding:12px 15px}
+.chatbox form{display:flex;padding:9px;gap:6px;background:#f4dfb9}
+.chatbox form input{min-width:0;flex:1;border:2px solid #d2a26c;border-radius:10px;padding:9px;color:#4b3022;background:#fffaf0}
+.chatbox form button{border:0;border-radius:10px;padding:0 16px;background:linear-gradient(#ffc96d,#df8242);color:#fff;font-weight:1000}
+.messages{background:linear-gradient(#fff8e9,#f3e1c2)}
+.message{border:1px solid #e6c99d;border-radius:10px;background:#fffdf5;padding:8px 10px;margin:7px}
+.chatbox.open,.memberbox.open{display:flex}
+.room-scene .room-controls{z-index:16}
+
+/* Classroom: Japanese academy details */
+.class-scenery{position:absolute;inset:0;pointer-events:none}
+.classroom-window-scene{position:absolute;left:4%;top:7%;width:21%;height:27%;border:10px solid #845535;border-radius:8px;background:linear-gradient(#7bc9e1 0 48%,#f3f5ce 49% 58%,#80ad78 59%);box-shadow:inset 0 0 0 5px #f6dfad,0 6px #5b3a28}
+.classroom-window-scene span{position:absolute;bottom:4px;left:8px;color:#fff;font-weight:1000;text-shadow:0 2px 4px #234}
+.blackboard{top:8%;left:31%;width:38%;height:27%;border:9px solid #895a39;border-radius:10px;background:linear-gradient(145deg,#17644e,#0c493b);box-shadow:0 8px 0 #583a29, inset 0 0 0 2px #ffffff20;color:#fff3c7;font-size:clamp(22px,3vw,38px);padding:22px;text-align:center}
+.blackboard small{display:block;margin-top:18px;font-size:clamp(14px,1.7vw,22px);color:#ffdf92}
+.blackboard i{display:block;margin-top:12px;font-size:12px;color:#d6f2d9}
+.class-clock{position:absolute;right:27%;top:8%;width:65px;height:65px;border:5px solid #895a39;border-radius:50%;display:grid;place-items:center;background:#fff0c9;font-size:29px;box-shadow:0 4px #5b3a28}
+.class-shelf{position:absolute;left:4%;top:43%;width:19%;height:22%;border:5px solid #71452e;border-radius:12px;background:linear-gradient(#bd8751,#70432d);box-shadow:0 7px #492d20;color:#fff0c5;text-align:center;padding:16px;font-size:25px}
+.class-shelf small{display:block;font-size:11px;font-weight:1000}
+.class-pinboard{position:absolute;right:4%;top:43%;width:19%;height:19%;padding:12px;border:5px solid #8b5c3c;border-radius:9px;background:#f1d49b;color:#593a28;font-weight:1000;text-align:center;box-shadow:0 6px #5b3928}
+.class-pinboard small{font-size:11px}
+.class-desk{position:absolute;bottom:14%;width:20%;height:18%;border:5px solid #73472f;border-radius:13px;background:linear-gradient(#d49b61,#965c39);box-shadow:0 8px #563523;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff3d0;font-weight:1000}
+.class-desk span{font-size:38px}.class-desk small{font-size:13px}
+.desk-left{left:12%}.desk-mid{left:40%}.desk-right{right:12%}
+.class-plant{position:absolute;bottom:18%;font-size:46px;filter:drop-shadow(0 4px 3px #473)}
+.wall-scroll{position:absolute;top:41%;left:26%;padding:8px 12px;background:#fff1cf;border:3px solid #a46c3f;color:#72452c;font-weight:1000;writing-mode:vertical-rl;box-shadow:0 4px #71472e}
+.wall-banner{position:absolute;top:2%;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:3px;color:#93623d;font-weight:1000}
+.sakura-branch{position:absolute;right:8%;top:31%;font-size:26px}
+
+/* Tea house: warm Japanese tea room and stern host */
+.interior-tea{background:linear-gradient(180deg,#f2dfb6 0 48%,#b8794e 48% 100%)}
+.interior-tea .wall{background:linear-gradient(180deg,#f8e8c7,#e8c99a);border-bottom-color:#69412c}
+.interior-tea .floor{background:repeating-linear-gradient(0deg,transparent 0 44px,#78482b30 45px 48px),linear-gradient(#c88e5a,#a9683e)}
+.tea-room-art{position:absolute;inset:0;pointer-events:none}
+.tea-window{position:absolute;left:5%;top:9%;width:28%;height:30%;border:9px solid #75452d;background:linear-gradient(#7fc9dc 0 48%,#b9d99c 49% 62%,#57915c 63%);box-shadow:inset 0 0 0 5px #f3d7a4}
+.tea-window:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 47%,#71432c 48% 52%,transparent 53%),linear-gradient(transparent 47%,#71432c 48% 52%,transparent 53%)}
+.tea-window span{position:absolute;bottom:4px;left:5px;color:#fff;font-size:11px;font-weight:1000;text-shadow:0 2px #254}
+.tea-sign{position:absolute;left:40%;top:5%;padding:13px 35px;border:5px solid #794a2e;border-radius:12px;background:linear-gradient(#fff0c7,#d9a36c);color:#62391f;font-weight:1000;font-size:22px;box-shadow:0 7px #553523}
+.tea-shelf{position:absolute;right:5%;top:12%;width:24%;height:30%;border:7px solid #70432c;border-radius:8px;background:repeating-linear-gradient(0deg,#b77b49 0 45%,#633b29 46% 50%);display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;box-shadow:0 7px #4c3023}
+.tea-shelf b{font-size:30px}.tea-shelf small{width:100%;text-align:center;color:#fff1c9;font-size:10px;font-weight:1000}
+.tea-scroll{position:absolute;left:36%;top:14%;writing-mode:vertical-rl;background:#fff0d0;border:4px solid #865333;padding:10px;color:#74462d;font-size:21px;font-weight:1000}
+.tea-host{position:absolute;left:67%;top:43%;width:155px;height:240px;display:flex;align-items:center;flex-direction:column;z-index:7;filter:drop-shadow(0 7px 4px #422b2088)}
+.tung-head{position:relative;width:92px;height:92px;border:4px solid #543222;border-radius:48% 48% 44% 44%;background:linear-gradient(#f6c99e,#e7a875);box-shadow:inset 0 -8px #b86c4d}
+.tung-hair{position:absolute;left:0;right:0;top:-8px;height:29px;background:#2b2524;border-radius:55% 55% 25% 20%}
+.tung-brow{position:absolute;top:36px;width:24px;height:6px;background:#352320;border-radius:5px}
+.tung-brow.left{left:14px;transform:rotate(15deg)}.tung-brow.right{right:14px;transform:rotate(-15deg)}
+.tung-eye{position:absolute;top:46px;width:8px;height:11px;border-radius:50%;background:#2a1d1b}
+.tung-eye.left{left:23px}.tung-eye.right{right:23px}
+.tung-nose{position:absolute;top:56px;left:42px;width:8px;height:8px;border-radius:50%;background:#d78e68}
+.tung-mouth{position:absolute;left:29px;top:70px;width:30px;height:4px;background:#6e3029;border-radius:4px}
+.tung-body{font-size:95px;line-height:1.15;filter:drop-shadow(0 5px #533)}
+.tea-host small{background:#fff0cb;color:#603a27;border:2px solid #8b5a38;border-radius:7px;padding:4px 8px;font-weight:1000}
+.tea-host em{margin-top:5px;background:#fff2d7;color:#583522;border:2px solid #a26c45;border-radius:12px;padding:6px 9px;font-size:10px;font-weight:900;white-space:nowrap}
+.tea-table{position:absolute;left:22%;bottom:9%;width:40%;height:20%;border:8px solid #70432d;border-radius:50%;background:radial-gradient(ellipse,#d99c62,#9b6039);box-shadow:0 9px #4e3021;display:flex;justify-content:space-evenly;align-items:center;color:#fff0c9;font-size:27px}
+.tea-table span{font-size:12px;font-weight:1000}
+.interior-tea .room-action{z-index:12}
+
+/* Gym training hall */
+.interior-gym{background:linear-gradient(180deg,#d5e8e4 0 48%,#a7b6b8 48% 100%)}
+.interior-gym .wall{background:linear-gradient(180deg,#dcefeb,#a8c9c8);border-bottom-color:#4b5554}
+.interior-gym .floor{background:repeating-linear-gradient(0deg,transparent 0 35px,#fff3 36px 38px),linear-gradient(#84989b,#526d73)}
+.gym-room-art{position:absolute;inset:0;pointer-events:none}
+.gym-motto{position:absolute;top:5%;left:50%;transform:translateX(-50%);font-weight:1000;letter-spacing:4px;color:#244c55;background:#fff1cf;border:4px solid #805338;border-radius:12px;padding:10px 24px}
+.gym-mirror{position:absolute;left:5%;top:15%;width:90%;height:27%;border:9px solid #735039;background:linear-gradient(140deg,#bce2e7,#e6f4eb 48%,#a6d0d3);box-shadow:0 7px #523725,inset 0 0 0 4px #fff8}
+.gym-rack,.gym-bike,.gym-dumbbells,.gym-medals{position:absolute;top:53%;width:17%;height:24%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:6px solid #5d5148;border-radius:13px;background:linear-gradient(#b5c7c8,#667e82);box-shadow:0 8px #403a34;font-size:46px}
+.gym-rack{left:7%}.gym-bike{left:30%}.gym-dumbbells{right:30%}.gym-medals{right:7%;background:linear-gradient(#e9c67d,#a66b39)}
+.gym-rack small,.gym-bike small,.gym-dumbbells small,.gym-medals small{font-size:11px;font-weight:1000;color:#fff}
+.gym-coach{position:absolute;left:50%;top:48%;transform:translateX(-50%);font-size:62px;z-index:7;background:#fff0d0;border:5px solid #805337;border-radius:18px;padding:8px 22px;box-shadow:0 7px #513522;text-align:center}
+.gym-coach small,.gym-coach b{display:block;font-size:10px;color:#573a29}
+.gym-coach b{font-size:9px}
+
+/* Exam halls */
+.exam-room-art{position:absolute;inset:0;pointer-events:none}
+.exam-window{position:absolute;left:6%;top:10%;width:23%;height:27%;border:8px solid #70472f;background:linear-gradient(#84cce2,#d7f0dd 65%,#80a879);display:grid;place-items:center;color:#fff;font-weight:1000;text-shadow:0 2px #345}
+.exam-podium{position:absolute;left:41%;top:38%;width:18%;height:25%;border:8px solid #784b31;border-radius:16px;background:linear-gradient(#fff0c5,#d6a365);box-shadow:0 9px #563623;display:grid;place-items:center;color:#8c3c35;font-size:clamp(42px,5vw,68px);font-weight:1000}
+.exam-podium small{display:block;font-size:10px;color:#543522}
+.exam-bookcase{position:absolute;right:5%;top:12%;width:22%;height:26%;border:7px solid #70452e;background:repeating-linear-gradient(0deg,#b97f4b 0 31%,#70452e 32% 36%);display:grid;place-items:center;color:#fff;font-size:27px}
+.exam-bookcase small,.exam-headphones small{font-size:10px;font-weight:1000}
+.exam-headphones{position:absolute;left:7%;top:52%;font-size:48px;background:#fff0cf;border:5px solid #815338;border-radius:12px;padding:8px 20px;box-shadow:0 6px #583725}
+.exam-scroll{position:absolute;right:8%;top:53%;background:#fff1d4;border:4px solid #875638;padding:12px;color:#6a3f29;font-weight:1000;writing-mode:vertical-rl;letter-spacing:3px}
+
+/* Arena matchmaking lobby */
+.interior-arena{background:linear-gradient(180deg,#e5d3ad 0 48%,#a56a4a 48% 100%)}
+.interior-arena .wall{background:radial-gradient(ellipse at 50% 30%,#ffe5aa,#b67b55 80%);border-bottom-color:#623923}
+.arena-art{position:absolute;inset:0;pointer-events:none}
+.arena-banners{position:absolute;top:5%;left:50%;transform:translateX(-50%);font-size:clamp(22px,3vw,38px);font-weight:1000;color:#fff0bd;text-shadow:0 4px #68351f,0 0 15px #ffb84c}
+.arena-crowd{position:absolute;top:17%;left:8%;right:8%;text-align:center;font-size:38px}
+.arena-ring{position:absolute;left:8%;top:36%;width:34%;height:36%;border:13px solid #eac477;border-radius:50%;background:radial-gradient(ellipse,#e9c98d,#8f5739);box-shadow:0 12px #573521,inset 0 0 0 8px #75432d;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff1c2;font-size:34px;font-weight:1000;text-shadow:0 3px #533}
+.arena-ring small{font-size:12px}
+.arena-podium{position:absolute;right:8%;top:28%;width:18%;height:23%;border:7px solid #6b422b;border-radius:18px;background:linear-gradient(#ffe7a3,#b77a3e);display:grid;place-items:center;font-size:60px;box-shadow:0 8px #523421}
+.arena-podium small{font-size:9px;color:#5a3522;font-weight:1000}
+.arena-weapon{position:absolute;top:66%;font-size:45px}.arena-weapon.left{left:10%}.arena-weapon.right{right:14%}
+.arena-lobby{position:absolute;z-index:20;right:5%;top:37%;width:34%;min-width:280px;max-height:52%;overflow:auto;padding:16px;border:5px solid #845233;border-radius:18px;background:linear-gradient(#fff4d6,#e6bd7e);color:#563722;box-shadow:0 9px #543321,0 15px 28px #321c1b55}
+.arena-lobby h3{margin:0 0 7px;text-align:center;color:#7d3c2b}
+.arena-lobby p{text-align:center;font-size:12px;margin:4px 0 10px}
+.arena-modes{display:flex;gap:8px}
+.arena-modes button{flex:1;border:2px solid #9b603a;border-radius:12px;padding:10px 5px;background:linear-gradient(#fff1c8,#d99d5b);color:#55331f;font-weight:1000}
+.arena-modes small{display:block;font-size:10px}
+#arenaStatus{text-align:center;font-size:12px;font-weight:900;margin:9px}
+.arena-player{display:flex;justify-content:space-between;padding:6px 9px;margin:4px 0;border-radius:8px;background:#fff9e9;border:1px solid #d5aa70;font-size:11px}
+.arena-player.ready{background:#e0f5d9;border-color:#75ae6d}
+.arena-lobby>button{width:100%;margin-top:7px;padding:9px;border-radius:10px}
+.arena-battle-modal{position:absolute;z-index:60;inset:0;background:#101d2bcc;display:grid;place-items:center}
+.arena-battle-modal>div{width:min(480px,90%);padding:25px;border:5px solid #f1cb7e;border-radius:20px;background:linear-gradient(#fff3d3,#d9a46a);color:#53321e;text-align:center;box-shadow:0 10px #563520}
+.arena-battle-modal h2{color:#9c432c}
+@media(max-width:760px){
+ .room-top-actions button{padding:6px 8px;font-size:11px}
+ .chatbox,.memberbox{top:65px;right:5px;width:min(330px,92vw);height:65vh}
+ .blackboard{left:25%;width:50%;padding:9px;font-size:16px}
+ .blackboard small{font-size:11px;margin-top:6px}
+ .class-shelf,.class-pinboard{height:17%;font-size:12px}
+ .class-desk{height:16%;bottom:12%}.class-desk span{font-size:24px}
+ .tea-host{transform:scale(.72);transform-origin:top center;left:68%;top:43%}
+ .tea-sign{font-size:13px;padding:8px 14px}
+ .tea-shelf{height:22%;font-size:19px}
+ .gym-motto{font-size:9px;letter-spacing:1px;white-space:nowrap}
+ .gym-rack,.gym-bike,.gym-dumbbells,.gym-medals{height:19%;top:57%;font-size:26px}
+ .arena-lobby{right:3%;top:40%;width:44%;min-width:0;padding:9px}
+ .arena-lobby h3{font-size:12px}.arena-lobby p{font-size:9px}
+ .arena-modes button{font-size:10px;padding:6px 2px}
+ .arena-ring{left:4%;width:35%;height:28%;top:40%}
+}

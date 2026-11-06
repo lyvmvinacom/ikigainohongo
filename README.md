@@ -34,3 +34,13 @@ Lớp học, Đấu trường, N5, N4, JFT, Gym và Phòng Anh Tùng có bố c�
 - Người chơi đăng nhập được hiển thị bằng sprite riêng; các nhân vật nằm sẵn trong artwork là minh họa môi trường (NPC trang trí), không đại diện tài khoản đang online.
 - Các nút menu chưa có backend riêng sẽ thông báo trạng thái thay vì tự tạo dữ liệu giả.
 - Khi cập nhật repo, giữ nguyên thư mục `assets/jft` nếu repo đang có dữ liệu JFT riêng.
+
+
+## IKIGAI WORLD 6.0 — nâng cấp nội thất và tương tác phòng
+- Các phòng được thiết kế bằng nhiều lớp HTML/CSS độc lập: tường, sàn, cửa sổ, bảng, kệ, bàn, thiết bị, biển hiệu và NPC; không còn phụ thuộc vào một ảnh chụp toàn phòng.
+- Phòng trà có NPC Anh Tùng vẽ riêng với lông mày cau và biểu cảm nghiêm khắc; có thể nhấp để nghe lời thoại.
+- Chat và danh sách người chơi được đặt ở cấp thế giới, có thể mở trong cả bản đồ lẫn từng phòng.
+- Đấu trường có hàng chờ Presence: 1v1 cần 2 người, 2v2 cần 4 người; người tham gia phải bấm Sẵn sàng trước khi hệ thống mở màn hình bắt đầu thử thách.
+- Ghép trận dựa trên Supabase Realtime Presence của cùng kênh thế giới. Đây là hàng chờ/điều kiện đủ người phía client, chưa phải hệ thống thi đấu có máy chủ phân xử chống gian lận.
+- Giữ nguyên cơ chế đăng nhập, hồ sơ XP/xu và ngân hàng N5. Không chạy lại SQL chỉ để dùng giao diện phòng/chat/hàng chờ.
+- Nếu repo có `assets/jft/` hoặc tài nguyên bổ sung khác không có trong gói này, giữ lại khi cập nhật.
