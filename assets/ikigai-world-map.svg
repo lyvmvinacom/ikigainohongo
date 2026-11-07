@@ -118,7 +118,7 @@
     <path d="M-150-78Q0-180 150-78L135-65Q0-135-135-65Z" fill="none" stroke="#f8d78e" stroke-width="8"/>
     <path d="M-72 10V-48H-22V10M22 10V-48H72V10" fill="#7bc5d4" stroke="#75472d" stroke-width="7"/>
     <rect x="-105" y="-22" width="210" height="62" rx="12" fill="#fff0c6" stroke="#a86d3e" stroke-width="7"/>
-    <text x="0" y="3" font-size="22" text-anchor="middle" font-weight="900" fill="#563525">PHÒNG ANH TÙNG</text>
+    <text x="0" y="3" font-size="22" text-anchor="middle" font-weight="900" fill="#563525">PHÒNG GIÁM ĐỐC</text>
     <text x="0" y="27" font-size="12" text-anchor="middle" font-weight="700" fill="#71472e">GÓC TRÀ IKIGAI</text>
     
     <path d="M-145-80L-120-98L-110-83M145-80L120-98L110-83" fill="none" stroke="#f7d38b" stroke-width="8"/>
