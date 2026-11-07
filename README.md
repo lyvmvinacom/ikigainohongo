@@ -52,3 +52,13 @@ Lớp học, Đấu trường, N5, N4, JFT, Gym và Phòng Anh Tùng có bố c�
 - Để cho phép đăng ký: trong Supabase Dashboard > Authentication > Providers > Email, bật Email provider; trong Authentication > Settings kiểm tra cho phép đăng ký mới. Nếu bật xác nhận email, học viên phải mở email xác nhận trước khi đăng nhập. Không dùng chế độ Khách nếu muốn tài khoản/hồ sơ đồng bộ lâu dài.
 - Hồ sơ XP/xu cần chạy `supabase-schema.sql` trong SQL Editor một lần. Realtime cần bật/được phép dùng cho project và trình duyệt phải có Internet.
 - Không cần chạy lại SQL nếu schema 3.2 đã được áp dụng ở phiên bản trước; thay đổi v7 chủ yếu là hiển thị bản đồ và bong bóng chat.
+
+
+## IKIGAI WORLD 4.1 – Mobile map & room chat update
+- Overworld now uses the clean SVG environment map; map controls are real HTML hotspots, not decorative controls baked into the artwork.
+- The entire 16:10 map stage scales to fit desktop and rotates as a whole on portrait phones so all destinations, including the arena, remain visible. The browser cannot force the phone's hardware orientation; users can rotate the device if they prefer landscape.
+- Removed the nonfunctional map side menu, quickbar and overworld movement pad. Only building hotspots, profile/resources, chat and logout remain.
+- Renamed the tea-room destination to Phòng Giám Đốc; the tea room layout and tea interaction remain.
+- Fixed room speech bubbles to render above player sprites, including the sender's own message.
+
+Deploy by replacing index.html, app.js, style.css and assets/ikigai-world-map.svg in the existing repository. Preserve Supabase schema, JFT assets, question bank and character assets.

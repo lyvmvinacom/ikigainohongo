@@ -401,3 +401,88 @@
 .room-actor .speech:after{content:"";position:absolute;left:50%;bottom:-9px;width:13px;height:13px;background:#ffe6b5;border-right:2px solid #8c5636;border-bottom:2px solid #8c5636;transform:translateX(-50%) rotate(45deg)}
 .room-actor .speech.show{opacity:1;visibility:visible;transform:translate(-50%,0) scale(1);animation:bubble-pop .18s ease-out}
 @keyframes bubble-pop{0%{transform:translate(-50%,8px) scale(.8)}100%{transform:translate(-50%,0) scale(1)}}
+
+/* v8 responsive Gunny-style world stage */
+.map-scene{background:#173b44;}
+.map-world-stage{position:absolute;left:50%;top:50%;width:min(100vw,177.68vh);aspect-ratio:1672/941;height:auto;transform:translate(-50%,-50%);overflow:hidden;border:2px solid #f4d79e;border-radius:12px;box-shadow:0 0 38px #0008;}
+.map-world-stage .world-layers,.map-world-stage .map-hotspots,.map-world-stage .actors{position:absolute;inset:0;width:100%;height:100%;}
+.map-world-stage .world-map{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;left:0;top:0;transform:none;object-fit:fill;border:0;border-radius:0;box-shadow:none;}
+.map-world-stage .map-atmosphere,.map-world-stage .map-water-glow,.map-world-stage .map-petals,.map-world-stage .map-fireflies{position:absolute;inset:0;pointer-events:none;}
+.map-world-stage .map-hotspots{pointer-events:none;}
+.map-world-stage .hotspot{pointer-events:auto;cursor:pointer;}
+.map-world-stage .hotspot:focus-visible{outline:3px solid #fff4a8;background:#fff3;}
+.director-sign{position:absolute;left:69%;top:58%;width:12%;height:5.5%;display:grid;place-items:center;border:2px solid #a45e2e;border-radius:12px;background:linear-gradient(#fff2c7,#f4bd6d);color:#55331f;font-weight:1000;font-size:clamp(8px,1vw,15px);text-shadow:0 1px #fff;box-shadow:0 3px #75452b;pointer-events:none;z-index:3;}
+.map-hud{z-index:12;top:max(7px,env(safe-area-inset-top));left:8px;right:8px;pointer-events:none;}
+.map-hud .identity,.map-hud .resources{pointer-events:auto;backdrop-filter:blur(5px);}
+.map-tools{z-index:14;top:78px;right:10px;}
+.map-tools button{padding:7px 11px;}
+.map-hint{z-index:11;bottom:max(7px,env(safe-area-inset-bottom));font-size:10px;}
+/* No movement pad / decorative quick buttons on the overworld: building hotspots are the only map controls. */
+.map-side-menu,.map-quickbar,.map-scene .move-pad{display:none!important;}
+/* Portrait phones: rotate the entire landscape game stage, not just its background. */
+@media(orientation:portrait){
+ .map-world-stage{width:min(100vh,177.68vw);height:auto;left:50%;top:50%;transform:translate(-50%,-50%) rotate(90deg);}
+ .map-hud{top:5px;left:5px;right:5px;}
+ .map-hud .identity{padding:4px 7px;font-size:10px;gap:5px;}
+ .map-hud .identity>span:first-child{font-size:20px;}
+ .map-hud .resources{padding:5px 7px;gap:6px;font-size:9px;}
+ .map-hud .resources small{display:none;}
+ .map-tools{top:auto;right:6px;bottom:28px;gap:4px;}
+ .map-tools button{font-size:10px;padding:5px 7px;}
+ .map-hint{left:50%;bottom:5px;font-size:8px;max-width:75vw;white-space:normal;text-align:center;}
+ .director-sign{font-size:8px;}
+}
+/* Restore chat bubbles: the generic .speech rule previously set display:none. */
+.room-actor .speech{display:block!important;opacity:0;visibility:hidden;z-index:40;pointer-events:none;}
+.room-actor .speech.show{opacity:1;visibility:visible;}
+.room-actors{z-index:12;overflow:visible;}
+.room-actor{z-index:13;}
+.room-actor .speech{max-width:min(240px,55vw);white-space:normal;}
+.room-top-actions{display:flex;gap:8px;align-items:center;}
+.chatbox{z-index:35;}
+@media(orientation:portrait){.chatbox,.memberbox{top:54px;right:6px;width:min(300px,82vw);height:48dvh;}}
+
+/* v8 responsive Gunny-style world stage */
+.map-scene{background:#173b44;}
+.map-world-stage{position:absolute;left:50%;top:50%;width:min(100vw,177.68vh);aspect-ratio:1672/941;height:auto;transform:translate(-50%,-50%);overflow:hidden;border:2px solid #f4d79e;border-radius:12px;box-shadow:0 0 38px #0008;}
+.map-world-stage .world-layers,.map-world-stage .map-hotspots,.map-world-stage .actors{position:absolute;inset:0;width:100%;height:100%;}
+.map-world-stage .world-map{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;left:0;top:0;transform:none;object-fit:fill;border:0;border-radius:0;box-shadow:none;}
+.map-world-stage .map-atmosphere,.map-world-stage .map-water-glow,.map-world-stage .map-petals,.map-world-stage .map-fireflies{position:absolute;inset:0;pointer-events:none;}
+.map-world-stage .map-hotspots{pointer-events:none;}
+.map-world-stage .hotspot{pointer-events:auto;cursor:pointer;}
+.map-world-stage .hotspot:focus-visible{outline:3px solid #fff4a8;background:#fff3;}
+.director-sign{position:absolute;left:69%;top:58%;width:12%;height:5.5%;display:grid;place-items:center;border:2px solid #a45e2e;border-radius:12px;background:linear-gradient(#fff2c7,#f4bd6d);color:#55331f;font-weight:1000;font-size:clamp(8px,1vw,15px);text-shadow:0 1px #fff;box-shadow:0 3px #75452b;pointer-events:none;z-index:3;}
+.map-hud{z-index:12;top:max(7px,env(safe-area-inset-top));left:8px;right:8px;pointer-events:none;}
+.map-hud .identity,.map-hud .resources{pointer-events:auto;backdrop-filter:blur(5px);}
+.map-tools{z-index:14;top:78px;right:10px;}
+.map-tools button{padding:7px 11px;}
+.map-hint{z-index:11;bottom:max(7px,env(safe-area-inset-bottom));font-size:10px;}
+.map-side-menu,.map-quickbar,.map-scene .move-pad{display:none!important;}
+@media(orientation:portrait){
+ .map-world-stage{width:min(100vh,177.68vw);height:auto;left:50%;top:50%;transform:translate(-50%,-50%) rotate(90deg);}
+ .map-hud{top:5px;left:5px;right:5px;}
+ .map-hud .identity{padding:4px 7px;font-size:10px;gap:5px;}
+ .map-hud .identity>span:first-child{font-size:20px;}
+ .map-hud .resources{padding:5px 7px;gap:6px;font-size:9px;}
+ .map-hud .resources small{display:none;}
+ .map-tools{top:auto;right:6px;bottom:28px;gap:4px;}
+ .map-tools button{font-size:10px;padding:5px 7px;}
+ .map-hint{left:50%;bottom:5px;font-size:8px;max-width:75vw;white-space:normal;text-align:center;}
+ .director-sign{font-size:8px;}
+}
+.room-actor .speech{display:block!important;opacity:0;visibility:hidden;z-index:40;pointer-events:none;}
+.room-actor .speech.show{opacity:1;visibility:visible;}
+.room-actors{z-index:12;overflow:visible;}
+.room-actor{z-index:13;}
+.room-actor .speech{max-width:min(240px,55vw);white-space:normal;}
+.room-top-actions{display:flex;gap:8px;align-items:center;}
+.chatbox{z-index:35;}
+@media(orientation:portrait){.chatbox,.memberbox{top:54px;right:6px;width:min(300px,82vw);height:48dvh;}}
+/* Map uses the clean, character-free SVG environment; all entrances are real HTML hotspots. */
+.map-world-stage{width:min(100vw,160vh);aspect-ratio:1600/1000;}
+.map-world-stage .world-map{object-fit:fill;}
+@media(orientation:portrait){.map-world-stage{width:min(100vh,160vw);}}
+.director-sign{display:none!important;}
+/* Bubble layer must remain visible above characters and furniture. */
+.room-actor .speech{display:block!important;opacity:0;visibility:hidden;z-index:60;}
+.room-actor .speech.show{opacity:1;visibility:visible;}
